@@ -1,6 +1,6 @@
 import os
 import pytest
-from py.xml import html
+from py.xml import html  # html namespace
 from selenium import webdriver
 from selenium.webdriver import Remote
 from selenium.webdriver.chrome.options import Options as CH_Options
@@ -96,7 +96,7 @@ def description_html(desc):
             desc_ = desc_ + ";"
         else:
             desc_ = desc_ + desc[i]
-    
+
     desc_lines = desc_.split(";")
     desc_html = html.html(
         html.head(
@@ -171,7 +171,7 @@ def browser():
         # 通过远程节点运行
         driver = Remote(command_executor='http://10.2.16.182:4444/wd/hub',
                         desired_capabilities={
-                              "browserName": "chrome",
+                            "browserName": "chrome",
                         })
         driver.set_window_size(1920, 1080)
 
